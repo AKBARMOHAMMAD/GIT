@@ -10,24 +10,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   .jumbotron {
-      background-image: url("{% static 'images/hotel-page-image_orig.png' %}");
+      background-image: url("{% static 'images/hotel-page-image_orig.png' %}" );
         }
   </style>
 
 
 </head>
-<body bgcolor="#f0ffff">
+<body>
 <div class="jumbotron text-center">
-
+    <h1 align="center" style="height: 100px" rel="script">AKBAR HOTEL</h1>
     <marquee>
                     <font size="3" face="arial" color="#006400">
                         The great advantage of a hotel is that it is a refuge from home life.
                     </font>
                 </marquee>
- </div>
-
-
-
     <table align="center" border="2">
         <tr>
             <th width="120"><a href="/openHomePage/?type=home">Home</a></th>
@@ -38,31 +34,23 @@
             <th width="120"><a href="/openCancelPage/?type=u_cancel">CANCEL</a> </th>
         </tr>
     </table>
-  </div>
-<div style="background-color:lightgreen;color:white;padding:20px;">
+</div>
+
     {% if type == "home" %}
-        <table align="left" border="0">
-    <tr>
-        <h2>
-            Check Here For Rooms<br> Available or Not:
-        </h2>
-        <td>
-            Select Rooms:<select><option value="">Select</option> </select>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            CHECK-IN:<input id="date" type="date" value="yyyy-mm-dd">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            CHECK-OUT:<input id="date" type="date" value="yyyy-mm-dd">
-        </td>
-    </tr>
-    <tr></tr>
-    <tr><td align="center"><input type="submit" value="Check"></td></tr>
-</table>
+        <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+            <h2>Check Here For Rooms<br> Available or Not:
+            </h2><br>
+            Select Rooms:<select><option value="">Select</option> </select><br>
+            CHECK-IN:<input id="date" type="date" value="yyyy-mm-dd"><br>
+            CHECK-OUT:<input id="date" type="date" value="yyyy-mm-dd"><br>
+            <input type="submit" value="Check">
+        </div>
+      </div>
+    </div>
+
+
     <!-- <table align="left">
          <td align="center">
             <tr><td width="200"><h2>CHECK HERE FOR ROOMS<br>
@@ -187,33 +175,7 @@ Online hotel reservations are also helpful for making last minute travel arrange
     </div>
   </div>
 </div>
-        <h2 align="center"><font size="2" face="Arial"> We Offer Several kinds of rooms </font></h2>
-        <table align="center" border="1" bgcolor="#f0ffff">
-        <tr>
-            <td width="50">
-                <img src="{% static 'services/elegant-interior-design-hotel-room-house_148900.jpg' %}" width="150" height="150">
-            </td></tr></table>
-        <table align="center">
-            <tr><th><h3>AC Rooms</h3>
-                <p>Very Comfortable air<br>
-                    conditioned rooms with all basic<br>
-                    emenitieas in royal way</p><hr>
-            </tr></th>
-                </table>
 
-        <table align="center" border="1" bgcolor="white">
-            <tr>
-                <td width="50">
-                 <img src="{% static 'services/IMP_Standard_Double_07.jpg' %}" width="150" height="150">
-                    </td></tr></table>
-
-        <table align="center">
-            <tr><th><h3>Non-AC Rooms</h3>
-                <p>Very Comfortable and affordable<br>
-                    luxury rooms with basic<br>
-                    emenitieas in a grand manner</p><hr>
-            </tr></th>
-                </table>
         {% endif %}
     {% if type == "u_register" %}
         <form action="/registerUser/" method="post">  <!--verify it-->
@@ -283,6 +245,7 @@ Online hotel reservations are also helpful for making last minute travel arrange
     </div>
   </div>
 </div>
+
         </form>
     {% endif %}
 
