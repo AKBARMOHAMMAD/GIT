@@ -22,12 +22,23 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.openHomePage),
     path('openHomePage/', views.openHomePage),
+
     path('openUserLogin/', views.openUserLogin),
     path('openUserRegister/', views.openUserRegister),
-    path('openServicesPage/', views.openServicesPage),
-    path('openContactUsPage/', views.openContactUsPage),
-    path('openCancelPage/',views.openCancelPage),
-    path('openCheck_Availability/',views.Check_Availability),
     path('registerUser/',views.registerUser),
-    path('ContactUs/',views.ContactUs),
+    path('loginUser/',views.loginUser),
+
+
+
+    path('openServicesPage/', views.openServicesPage),
+
+    path('openContactPage/', views.openContactPage),
+
+    path('Contact/',views.Contact),
+
+    path('openCancelPage/',views.openCancelPage),
+
+    path('openCheck_Availability/',views.Check_Availability),
+
+
 ]

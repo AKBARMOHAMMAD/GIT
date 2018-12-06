@@ -17,12 +17,12 @@ class Room(models.Model):
     total_rooms=models.CharField(max_length=50)
     date=models.DateField()
  #=============================================
-class Review(models.Model):
+'''class Review(models.Model):
      #user=models.ForeignKey(User,on_delete=models.CASCADE)
      comment=models.CharField(max_length=255)
      rating=models.IntegerField()
      created_at=models.DateField()
-     updated_at=models.DateField()
+     updated_at=models.DateField()'''
 #====================================================
 class Check_Availability(models.Model):
     room_type=models.ForeignKey(Room,on_delete=models.CASCADE)
@@ -39,12 +39,16 @@ class UserRegister(models.Model):
     contact_no=models.IntegerField()
     address=models.CharField(max_length=100)
 #========================================================
-class ContactUs(models.Model):
+class Contact(models.Model):
     name=models.CharField(max_length=20)
     Email_id=models.EmailField(max_length=20,primary_key=True)
     phone_no=models.IntegerField()
     message=models.CharField(max_length=220)
 #============================================================
+'''class UserLogin(models.Model):
+    uname=models.CharField(max_length=20)
+    upass=models.CharField(max_length=20)'''
+#=========================================================
 '''User Model
 class Check_Availability(models.Model):
     room_type=models.IntegerField()

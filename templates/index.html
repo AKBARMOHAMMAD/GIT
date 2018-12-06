@@ -4,250 +4,183 @@
     {% load staticfiles %}
     <meta charset="UTF-8">
      <title>HotelBooking</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  .jumbotron {
-      background-image: url("{% static 'images/hotel-page-image_orig.png' %}" );
+    <style>
+        body{
+            background-image: url("{% static '/images/AKBAR1.jpg' %}");
         }
-  </style>
-
-
+    </style>
 </head>
-<body>
-<div class="jumbotron text-center">
-    <h1 align="center" style="height: 100px" rel="script">AKBAR HOTEL</h1>
-    <marquee>
-                    <font size="3" face="arial" color="#006400">
-                        The great advantage of a hotel is that it is a refuge from home life.
-                    </font>
-                </marquee>
-    <table align="center" border="2">
-        <tr>
-            <th width="120"><a href="/openHomePage/?type=home">Home</a></th>
-            <th width="120"><a href="/openServicesPage/?type=h_services">Services</a></th>
-            <th width="120"><a href="/openUserLogin/?type=h_user">User</a></th>
-            <th width="120"><a href="/admin/" target="_blank"> Admin</a></th>
-            <th width="120"><a href="/openContactUsPage/?type=h_contact">CONTACT</a></th>
-            <th width="120"><a href="/openCancelPage/?type=u_cancel">CANCEL</a> </th>
-        </tr>
-    </table>
-</div>
-
-    {% if type == "home" %}
-        <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-            <h2>Check Here For Rooms<br> Available or Not:
-            </h2><br>
-            Select Rooms:<select><option value="">Select</option> </select><br>
-            CHECK-IN:<input id="date" type="date" value="yyyy-mm-dd"><br>
-            CHECK-OUT:<input id="date" type="date" value="yyyy-mm-dd"><br>
-            <input type="submit" value="Check">
-        </div>
-      </div>
-    </div>
-
-
-    <!-- <table align="left">
-         <td align="center">
-            <tr><td width="200"><h2>CHECK HERE FOR ROOMS<br>
-            AVAILABLE OR NOT:</h2></td></tr>
-                    <tr><td>Select Room:<select><option value="">Select</option>
-                                    <option value="">AC</option>
-                                    <option value="">Non-AC</option>
-                                    <option value="">Luxary</option>
-                                    <option value="">Delux</option>
-        </select></tr></td><br>
-        <tr><td>Check IN:<select><option value="DD">DD</option></select>
-            <select><option value="MONTH">MONTH</option></select>
-                              <select><option value="YEAR">YEAR</option>
-        </select></td></tr><br>
-        <tr><td>Check OUT:<select><option value="DD">DD</option></select>
-            <select><option value="MONTH">MONTH</option></select>
-                              <select><option value="YEAR">YEAR</option>
-        </select></td></tr><br>
-         <tr align="center"><td colspan="2"><input type="submit" value="CHECK"></td></tr></table>-->
-        <table>
-           <h1 align="center">Hotel AKBAR is happy to welcome</h1>
-            <img src="{% static 'images/Akbar hotel.png' %}" width="150" height="150" style="float: right">
-                <font size="4" face="Arial"> Online hotel reservations are a popular method for booking hotel rooms. Travelers can book rooms on a computer by using online security to protect their privacy and financial information and by using several online travel agents to compare prices and facilities at different hotels.Prior to the Internet, travelers could write, telephone the hotel directly, or use a travel agent to make a reservation. Nowadays, online travel agents have pictures of hotels and rooms, information on prices and deals, and even information on local resorts. Many also allow reviews of the traveler to be recorded with the online travel agent.
-Online hotel reservations are also helpful for making last minute travel arrangements. Hotels may drop the price of a room if some rooms are still available. There are several websites that specialize in searches for deals on rooms.</font>
-    {% endif %}
-    </table>
-</div>
-    {% if type == "h_user" %}
-        <form  action="//" method="post">
+<body bgcolor="#f0ffff">
+<h1 align="center">AKBAR'S HOTEL</h1>
+<marquee>
+    <font size="3" face="Algerian">The only purpose of ‘customer service’… is to change feelings.</font>
+</marquee>
+<table align="center" border="2">
+    <tr>
+        <th width="120">
+            <a href="/openHomePage/?type=home">HOME</a>
+        </th>
+         <th width="120">
+            <a href="/openServicesPage/?type=h_services">SERVICES</a>
+        </th>
+         <th width="120">
+            <a href="/openUserLogin/?type=h_user">USER</a>
+        </th>
+         <th width="120">
+            <a href="/openContactPage/?type=h_contact">CONTACT</a>
+        </th>
+         <th width="120">
+            <a href="/openCancelPage/?type=u_cancel">CANCEL</a>
+        </th>
+         <th width="120">
+            <a href="/admin/" target="_blank">ADMIN</a>
+        </th>
+    </tr>
+</table>
+        {% if type == "home" %}
+            <table align="center">
+                <br> <br> <br>
+                <tr>
+                    <td width="350">
+                        <font size="4" face="Arial Rounded MT Bold">
+                            Online hotel reservations are a popular method for booking hotel rooms.
+                            Travelers can book rooms on a computer by using online security to protect their privacy and financial information and by using several online travel agents to compare prices and facilities at different hotels.
+                            Prior to the Internet, travelers could write, telephone the hotel directly.</font>
+                    </td>
+                    <td>
+                        <img src="{% static '/images/main_page_icon.png' %}" width="150" height="150">
+                    </td>
+                </tr>
+            </table>
+            <table border="1" bgcolor="#f0f8ff" width="300">
+                <tr><td align="center"><h2>Check Here For Rooms<br> Available or Not:</h2></td></tr>
+                <tr><th>Select Rooms:<select><option value="">Select</option> </select></th></tr>
+                <tr><th>CHECK-IN:<input id="date" type="date" value="yyyy-mm-dd"></th></tr>
+                <tr><th>CHECK-OUT:<input id="date" type="date" value="yyyy-mm-dd"></th></tr>
+                <tr><th><input type="submit" value="Check"></th></tr>
+            </table>
+        {% endif %}
+        {% if type == "h_services" %}
+            <form action="//" method="post">
             {% csrf_token %}
             <table align="center">
-                <tr><th align="center" colspan="2">User Login</th></tr>
                 <tr></tr>
                 <tr></tr>
-                <tr><th>UserName:</th><td><input type="text" placeholder="UserName" required name="uname"></td></tr>
-                <tr><th>Password:</th><td><input type="text" placeholder="PassWord" required name="pass"></td> </tr>
-                <tr><th align="center"><td><input type="submit" value="Login"></td></tr></th>
-                <tr><th colspan="2"><a href="//">Forgot password?</a></th></tr>
-                    <tr><th colspan="2"><a href="/openUserRegister/?type=u_register">New User Register</a>
-                </th></tr>
-            </table>
-        </form>
-    {% endif %}
-    {% if type == "h_services" %}
-        <form action="//" method="post">
-        {% csrf_token %}
-            <table align="center" border="0">
-                <tr></tr>
-                <tr></tr>
-
-                <tr><td><img src="{% static 'services/449ce32523f66b58a1abed42c90d74ec.png' %}" width="150" height="150"> </td>
-                    <td><img src="{% static 'services/elegant-interior-design-hotel-room-house_148900.jpg' %}" width="150" height="150"></td>
-                    <td><img src="{% static 'services/7131.jpg' %}" width="150" height="150"></td>
-                    <td><img src="{% static 'services/hotel-bed-linen.png' %}" width="150" height="150"></td>
-                    <td><img src="{% static 'services/the-surrey-new-york-1.png' %}" width="150" height="150"></td>
-                    <td><img src="{% static 'services/two-beds.png' %}" width="150" height="150"></td>
-                    <td><img src="{% static 'services/IMP_Standard_Double_07.jpg' %}" width="150" height="150"></td>
+                <tr>
+                    <td>
+                        <img src="{% static '/services/449ce32523f66b58a1abed42c90d74ec.png' %}" width="150" height="150">
+                    </td>
+                    <td>
+                        <img src="{% static '/services/7131.jpg' %}" width="150" height="150">
+                    </td>
+                    <td>
+                        <img src="{% static '/services/Ballsbridge-Hotel-Classic-Double-Room.jpg' %}" width="150" height="150">
+                    </td>
+                    <td>
+                        <img src="{% static '/services/elegant-interior-design-hotel-room-house_148900.jpg' %}" width="150" height="150">
+                    </td>
+                    <td>
+                        <img src="{% static '/services/hotel-bed-linen.png' %}" width="150" height="150">
+                    </td>
+                    <td>
+                        <img src="{% static '/services/IMP_Standard_Double_07.jpg' %}" width="150" height="150">
+                    </td>
                 </tr>
-                </table>
-        </form>
-        <div class="container-fluid">
-  <div class="text-center">
-        <h4>WE OFFER SEVERAL KINDS OF ROOMS</h4>
-  </div>
-  <div class="row">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Basic</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <img src="{% static 'images/Akbar.png' %}" width="300" height="300">
-        </div>
-          <div class="panel-heading">
-              <h1>AC ROOMS</h1>
-              <p>Very Comfortable air<br>
-                    conditioned rooms with all basic<br>
-                    emenitieas in royal way</p>
-          </div>
-        <div class="panel-body">
-          <p><strong>Floor</strong> 1-4</p>
-          <p><strong>Rooms</strong> 1</p>
-          <p><strong>Beds</strong> 1</p>
-          <p><strong>Baths</strong> 1</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-            <img src="{% static 'images/Akbar.png' %}" width="300" height="300">
-        </div>
-          <div class="panel-heading">
-              <h1>Non AC ROOMS</h1>
-              <p>Very Comfortable and affordable<br>
-                    luxury rooms with basic<br>
-                    emenitieas in a grand manner</p>
-          </div>
-        <div class="panel-body">
-          <p><strong>Floor</strong> 4-8</p>
-          <p><strong>Rooms</strong> 1</p>
-          <p><strong>Beds</strong> 1</p>
-          <p><strong>Baths</strong> 1</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+            </table>
+            </form>
         {% endif %}
-    {% if type == "u_register" %}
-        <form action="/registerUser/" method="post">  <!--verify it-->
+        {% if type == "h_user" %}
+            <form action="/loginUser/?type=u_home" method="post">
             {% csrf_token %}
-                <table align="center" border="0">
+                <table align="center">
+                    <tr><th><h2><font color="blue">{{ message }}</font></h2></th></tr>
+                    <h2 align="center">User Login</h2>
+                    <tr><th>UserName:<input type="email" placeholder="Enter UserName" required></tr></th>
+                    <tr><th>PassWord:<input type="password" placeholder="Enter Password" required></th></tr>
+                                        <tr><th><input type="checkbox">Remember me</th></tr>
+
+                    <tr><th><input type="submit" value="Login"></th></tr>
+                    <tr><th><a href="/openUserRegister/?type=u_register">New User Register</a> </th></tr>
+                </table>
+            </form>
+        {% endif %}
+        {% if type == "u_register" %}
+            <form action="/registerUser/" method="post">
+            {% csrf_token %}
+                <table align="center">
+                    <tr><th width="150">USER REGISTER</th></tr>
+                        <tr><th>First Name:<input type="text" placeholder="Enter FirstName" required name="u_fname"></th></tr>
+                        <tr><th>LastName:<input type="text" placeholder="Enter LastName" required name="u_lname"></th></tr>
+                        <tr><th>Email_Id: <input type="email" placeholder="Enter Email-Id" required name="u_email"></th> </tr>
+                        <tr><th>Password:<input type="password" placeholder="Enter Password" required name="u_pass"></th> </tr>
+                        <tr><th>Re-Password:<input type="password" placeholder="Enter Re-Password" required name="u_rpass"></th></tr>
+                        <tr><th>Contact No:<input type="number" placeholder="Contact No" required name="u_cno"></th></tr>
+                        <tr><th>Address:<input type="text" placeholder="Full Address" required name="u_add"></th></tr>
+                        <tr><th><input type="submit" value="Register"></th>
+                        <th><input type="reset" value="Reset"></th>
+                    </tr>
+
+                    <!--<tr><th>First Name:<input type="text" placeholder="FirstName" required name="u_fname></th></tr>
+                    <tr><th>Last Name:<input type="text" placeholder="LastName" required name="u_lname"></th></tr>
+                    <tr><th>Email_ID:<input type="email" placeholder="email" required name="u_email"></th></tr>
+                    <tr><th>Password:<input type="password" placeholder="password" required name="u_pass" ></th></tr>
+                    <tr><th>Re_Password:<input type="password" placeholder="password" required name="u_rpass"></th></tr>
+                    <tr><th>Contact_no:<input type="number" placeholder="PhoneNumber" required  name="u_cno"></th></tr>
+                    <tr><th>Address:<input type="text" placeholder="address" required name="u_add"></th></tr>
+                    <tr><th><input type="submit" value="Register"></th>
+                        <th><input type="reset" value="Reset"></th>
+                    </tr>-->
+                    </tr>
+                </table>
+
+            </form>
+        {% endif %}
+        {% if type == "h_contact" %}
+            <form action="/openContactPage/" method="post">
+            {% csrf_token %}
+                <table align="center">
+                    <tr><th><h2><font color="blue">{{ message }}</font></h2></th></tr>
                     <tr>
-                        <th width="150">
-                            <h3 align="right">User Register</h3>
+                        <h2 align="Center">Contact</h2>
+                    </tr>
+                    <tr><th>Name:</th><th><input type="text" placeholder="Name" required></th></tr>
+                    <tr><th>Email_Id:</th><th><input type="Email" placeholder="email" required></th></tr>
+                    <tr><th>Phone No:</th><th><input type="number" placeholder="PhoneNo" required></th></tr>
+                    <tr><th>Message:</th><th><textarea rows="5" required></textarea> </th></tr>
+                        <tr><th><input type="submit" value="Submit"></th></tr>
+                </table>
+
+                     <tr>
+                        <th width="200" height="250">
+                            <br>
+                             <br>
+                            <h2>Contact us and we'll get back to you within 24 hours.</h2><br>
+                                    <p>AMEERPET,HYDERABAD<br>
+                                        +91 9502535606<br>
+                                        akbar.frnds@gmail.com</p>
                         </th>
                     </tr>
-                    <tr><th>First Name:</th><td><input type="text" placeholder="Enter FirstName" required name="u_fname"></td></tr>
-                    <tr><th>LastName:</th><td><input type="text" placeholder="Enter LastName" required name="u_lname"></td></tr>
-                    <tr><th>Email_Id: </th><td><input type="email" placeholder="Enter Email-Id" required name="u_email"></td> </tr>
-                    <tr><th>Password:</th><td><input type="password" placeholder="Enter Password" required name="u_pass"></td> </tr>
-                    <tr><th>Re-Password:</th><td><input type="password" placeholder="Enter Re-Enter Password" required name="u_rpass"></td></tr>
-                    <tr><th>Contact No:</th><td><input type="number" placeholder="Contact No" required name="u_cno"></td></tr>
-                    <tr><th>Address:</th><td><input type="text" placeholder="Full Address" required name="u_add"></td></tr>
-                    <tr></tr>
-                    <tr></tr>
-                    <td><th><input type="Submit" value="Submit">
-                        <input type="reset" value="Reset"></th> </td><!--register successfully-->
+                        <tr><th><h2><font color="blue">{{ message }}</font></h2></th></tr>
+
+
+
 
                 </table>
-        </form>
-    {% endif %}
-    {% if type == "u_cancel" %}
-        <form action="/openHomePage/" method="post">
-        {% csrf_token %}
-        <table align="center">
-            <tr></tr>
-            <tr></tr>
-            <tr><th>User Name:</th><td><input type="text" placeholder="UserName"required name="uname"></td></tr></th>
-            <tr><th>RoomNumber:</th><td><input type="number" placeholder="RoomNumber" required name="uroom"></td></tr></th>
-            <tr><th>Cust_Id:</th><td><input type="number" required name="uid"></td></th> </tr>
-            <tr><th><td><input type="submit" value="Cancel"></td> </th> </tr><!--your booking room will be canceled-->
-
-        </table>
-         </form>
-    {% endif %}
-    {% if type == "h_contact" %}
-        <form action="/openHomePage/" method="post">
+            </form>
+        {% endif %}
+        {% if type == "u_cancel" %}
+            <form action="/openCancelPage/" method="post">
             {% csrf_token %}
-        <div class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>AMEERPET,HYDERABAD</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +91 9502535606</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> akbar.frnds@gmail.com</p>
-    </div>
-      <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            <table align="center">
+                    <tr><h2 align="Center">Cancel</h2></tr>
 
-        </form>
-    {% endif %}
+                <tr><th>UserName:</th><td><input type="text" placeholder="UserName" required></td></tr>
+                <tr><th>RoomNo:</th><td><input type="text" placeholder="RoomNo" required></td></tr>
+                <tr><th>Cust_Id:</th><td><input type="text" placeholder="Cust_Id" required></td></tr>
+                <tr><th><input type="submit" value="Cancel"></th></tr></table>
+            </form>
+        {% endif %}
+
 
 
 </body>
