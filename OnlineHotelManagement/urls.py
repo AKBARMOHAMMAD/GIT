@@ -27,6 +27,8 @@ urlpatterns = [
     path('openUserRegister/', views.openUserRegister),
     path('registerUser/',views.registerUser),
     path('loginUser/',views.loginUser),
+    path('openBookingPage/',views.openBookingPage),
+    path('openUserHomePage/',views.openUserHomePage),
 
 
 
@@ -34,7 +36,7 @@ urlpatterns = [
 
     path('openContactPage/', views.openContactPage),
 
-    path('Contact/',views.Contact),
+    path('ContactPage/',views.ContactPage),
 
     path('openCancelPage/',views.openCancelPage),
 

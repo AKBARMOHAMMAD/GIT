@@ -26,7 +26,7 @@ class Room(models.Model):
 #====================================================
 class Check_Availability(models.Model):
     room_type=models.ForeignKey(Room,on_delete=models.CASCADE)
-    maxno=models.CharField(max_length=10)
+    #maxno=models.CharField(max_length=10)
     check_In=models.DateField()
     check_Out=models.DateField()
 #============================================
@@ -49,8 +49,8 @@ class Contact(models.Model):
     uname=models.CharField(max_length=20)
     upass=models.CharField(max_length=20)'''
 #=========================================================
-'''User Model
-class Check_Availability(models.Model):
+
+'''class Check_Availability(models.Model):
     room_type=models.IntegerField()
     maxno=models.CharField(max_length=10)
     check_In=models.DateField()
@@ -74,5 +74,3 @@ class Cancle_Room(models.Model):
     user_name=models.CharField(max_length=50)
     room_no=models.ForeignKey(Display,on_delete=models.CASCADE)
     cust_id=models.IntegerField()'''
-
-

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load staticfiles%}
     <meta charset="UTF-8">
     <title>UserBooking</title>
      <style>
         body{
-            background-image: url("{% static '/images/AKBAR1.jpg' %}");
+           background-color: yellowgreen;
         }
     </style>
 </head>
@@ -15,27 +16,58 @@
     <font size="3" face="Algerian">The only purpose of ‘customer service’… is to change feelings.</font>
 </marquee>
 <table align="center" border="2">
-    <tr>
-        <th width="120">
-            <a href="/openHomePage/?type=home">HOME</a>
+    <tr><th width="120"><a href="/openUserHomePage/?type=home">HOME</a>
         </th>
+        <th width="120"><a href="/openBookingPage/?type=booking">BOOKING</a> </th>
+        <th width="120"><a href="/openBookingPage/?type=cancel">CANCEL</a> </th>
          <th width="120">
-            <a href="/openServicesPage/?type=h_services">SERVICES</a>
+            <a href="/openUserLogin/?type=h_user">LOGOUT</a>
         </th>
-         <th width="120">
-            <a href="/openUserLogin/?type=h_user">USER</a>
-        </th>
-         <th width="120">
-            <a href="/openContact/?type=h_contact">CONTACT</a>
-        </th>
-         <th width="120">
-            <a href="/openCancelPage/?type=u_cancel">CANCEL</a>
-        </th>
-         <th width="120">
-            <a href="/admin/" target="_blank">ADMIN</a>
-        </th>
+
+
+
     </tr>
 </table>
+<div>
+    <h1 align="center"> Welcome : {{ name.fname }}</h1>
+    <h1 align="center" >Welcome To Hotel AKBAR</h1>
+</div>
+{% if type == "home" %}
+
+    {% endif %}
+
+    {% if type == "booking" %}
+        <form action="//" method="post">
+        {% csrf_token %}
+         <table align="center">
+                <tr><td align="center"><h2>Check Here For Rooms<br> Available or Not:</h2></td></tr>
+                <tr><th>Select Rooms:<select><option value="">Select</option>
+                    <option>Single_Room</option>
+                    <option>Double_Room</option>
+                    <option>Triple_Room</option>
+                    <option>Double_double</option>
+                    <option>Quad</option>
+                    <option>Mini_Suite Room</option></select>
+                </th></tr>
+                <tr><th>CHECK-IN:<input id="date" type="date" value="yyyy-mm-dd"></th></tr>
+                <tr><th>CHECK-OUT:<input id="date" type="date" value="yyyy-mm-dd"></th></tr>
+                <tr><th><input type="submit" value="Check"></th></tr>
+         </table>
+        </form>
+    {% endif %}
+    {% if type == "cancel" %}
+        <form action="//" method="post">
+        {% csrf_token %}
+        <table align="center">
+                    <tr><h2 align="Center">Cancel</h2></tr>
+
+                <tr><th>UserName:</th><td><input type="text" placeholder="UserName" required></td></tr>
+                <tr><th>RoomNo:</th><td><input type="text" placeholder="RoomNo" required></td></tr>
+                <tr><th>Cust_Id:</th><td><input type="text" placeholder="Cust_Id" required></td></tr>
+                <tr><th><input type="submit" value="Cancel"></th></tr></table>
+        </form>
+    {% endif %}
+
 
 </body>
 </html>

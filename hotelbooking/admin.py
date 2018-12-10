@@ -9,4 +9,3 @@ admin.site.register(Room)
 admin.site.register(Check_Availability)
 admin.site.register(UserRegister)
 admin.site.register(Contact)
-
