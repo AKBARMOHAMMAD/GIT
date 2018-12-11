@@ -6,35 +6,25 @@
      <title>HotelBooking</title>
     <style>
         body{
-            background-color: lightgreen;
+           background-image: url("{% static 'images/background image.png' %}");
         }
     </style>
 </head>
 <body bgcolor="#f0ffff">
 <h1 align="center">AKBAR'S HOTEL</h1>
 <marquee>
-    <font size="3" face="Algerian">The only purpose of ‘customer service’… is to change feelings.</font>
+    <font size="3" face="Algerian" style="background: yellowgreen">The only purpose of ‘customer service’… is to change feelings.</font>
 </marquee>
 <table align="center" border="2">
     <tr>
-        <th width="120">
-            <a href="/openHomePage/?type=home">HOME</a>
-        </th>
-         <th width="120">
-            <a href="/openServicesPage/?type=h_services">SERVICES</a>
-        </th>
-         <th width="120">
-            <a href="/openUserLogin/?type=h_user">USER</a>
-        </th>
-         <th width="120">
-            <a href="/openContactPage/?type=h_contact">CONTACT</a>
-        </th>
+        <th width="120" bgcolor="#9acd32"><a href="/openHomePage/?type=home">HOME</a></th>
+        <th width="120" bgcolor="#9acd32"><a href="/openServicesPage/?type=h_services">SERVICES</a></th>
+        <th width="120" bgcolor="#9acd32"><a href="/openUserLogin/?type=h_user">USER</a></th>
+        <th width="120" bgcolor="#9acd32"><a href="/openContactPage/?type=h_contact">CONTACT</a></th>
          <!--<th width="120">
             <a href="/openCancelPage/?type=u_cancel">CANCEL</a>
         </th>-->
-         <th width="120">
-            <a href="/admin/" target="_blank">ADMIN</a>
-        </th>
+         <th width="120" bgcolor="#9acd32"><a href="/admin/" target="_blank">ADMIN</a></th>
     </tr>
 </table>
         {% if type == "home" %}
@@ -183,14 +173,14 @@
                 <table width="350">
                      <tr>
                         <th width="200" height="250">
-                            <h2 style="font: bold">Contact US:</h2>
+                            <h2>Contact US:</h2>
 
                                     <p> AMEERPET,HYDERABAD<br>
                                         +91 9502535606<br>
                                         akbar.frnds@gmail.com</p>
                         </th>
                     </tr>
-                        <tr><th><h2><font color="blue">{{ message }}</font></h2></th></tr>
+                        <!--<tr><th><h2><font color="blue">{{ message }}</font></h2></th></tr>-->
 
                </table>
             </form>

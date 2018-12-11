@@ -40,7 +40,8 @@ urlpatterns = [
 
     path('openCancelPage/',views.openCancelPage),
 
-    path('openCheck_Availability/',views.Check_Availability),
+
+    path('Check_Availability/',views.Check_Availability),
 
 
 ]
