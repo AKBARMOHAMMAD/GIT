@@ -3,13 +3,15 @@ from .models import Room
 from .models import Check_Availability
 from .models import UserRegister
 from .models import Contact
+from .models import Display
 #from .models import Cancel
 
 
 # Create your views here.
 def openHomePage(request):
     type="home"
-    return render(request,"index.html",{"type":type})
+    qs = Room.objects.all()
+    return render(request,"index.html",{"type":type,"qs":qs})
 def openUserLogin(request):
     type=request.GET.get("type")
     return render(request,"index.html",{"type":type})
@@ -69,14 +71,44 @@ def ContactPage(request):
 #=============================================================================
 def openUserHomePage(request):
     type="home"
-    return render(request,"index2.html",{"type":type})
+    res = UserRegister.objects.filter()
+    for x in res:
+        print(x)
+    return render(request,"index2.html",{"type":type,"name":x})
 
 def openBookingPage(request):
     type = request.GET.get("type")
     qs=Room.objects.all()
-    return render(request, "index2.html", {"type": type,"qs":qs})
+    res = UserRegister.objects.filter()
+    for x in res:
+        print(x)
+    return render(request, "index2.html", {"type": type,"qs":qs,"name":x})
 
-'''def openCancelPage(request):
+def openPaymentPage(request):
+    type=request.GET.get("type")
+    res=UserRegister.objects.filter()
+    qs = Room.objects.all()
+    for x in res:
+        print(x)
+    return render(request,"index2.html",{"type":type,"name":x,"qs":qs})
+def displayPage(request):
+    userName=request.GET.get("user_name")
+    roomname=request.GET.get("room_type")
+    checkIn=request.GET.get("check_In")
+    checkOut=request.GET.get("check_Out")
+    totalCost=request.GET.get("total_cost")
+    custId=request.GET.get("cust_id")
+    ak=Display(user_name=userName,room_type=roomname,check_In=checkIn,check_Out=checkOut,total_cost=totalCost,cust_id=custId)
+    ak.save()
+    return render(request,"index2.html",{"type":"display"})
+
+
+
+
+
+
+
+def openCancelPage(request):
     u_uname=request.POST.get('user_name')
     u_roomno=request.POST.get('room_no')
     u_cust=request.POST.get('cust_id')
@@ -85,5 +117,5 @@ def openBookingPage(request):
     bc.save()
     print(bc)
    # type=request.GET.get("type")
-    return render(request,"index2.html",{"type":'u_cancel',"message":'Successfully Canceled Room'})'''
+    return render(request,"index2.html",{"type":'u_cancel',"message":'Successfully Canceled Room'})
 #================================================================================

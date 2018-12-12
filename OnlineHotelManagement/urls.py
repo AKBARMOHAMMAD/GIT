@@ -30,6 +30,8 @@ urlpatterns = [
     path('openBookingPage/',views.openBookingPage),
     path('openUserHomePage/',views.openUserHomePage),
 
+    path('openPaymentPage/',views.openPaymentPage),
+    path('displayPage/',views.displayPage),
 
 
     path('openServicesPage/', views.openServicesPage),
